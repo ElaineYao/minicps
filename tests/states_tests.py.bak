@@ -48,7 +48,7 @@ def test_SQLiteStateClassMethods():
         SQLiteState._delete(PATH)
 
     except Exception as error:
-        print('ERROR test_SQLiteStateClassMethods: ', error)
+        print 'ERROR test_SQLiteStateClassMethods: ', error
         assert False
 
 
@@ -77,7 +77,7 @@ class TestSQLiteState():
             state = SQLiteState(STATE)
 
         except ValueError as error:
-            print('schema with no pk: ', error)
+            print 'schema with no pk: ', error
 
         finally:
             SQLiteState._delete(PATH)

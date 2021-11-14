@@ -309,12 +309,12 @@ class TestTank():
                 try:
                     self.get(2.22)
                 except TypeError as error:
-                    print('get what is a float: ', error)
+                    print 'get what is a float: ', error
 
                 try:
                     self.set(2, 5)
                 except TypeError as error:
-                    print('set what is an integer: ', error)
+                    print 'set what is an integer: ', error
 
         # TODO: add atts
         tank = ToyTank(
@@ -380,12 +380,12 @@ class TestPLC():
                 try:
                     self.get(2.22)
                 except TypeError as error:
-                    print('get what is a float: ', error)
+                    print 'get what is a float: ', error
 
                 try:
                     self.set(2, 5)
                 except TypeError as error:
-                    print('set what is an integer: ', error)
+                    print 'set what is an integer: ', error
 
         plc = ToyPLC(
             name=TestPLC.NAME,
@@ -450,12 +450,12 @@ class TestHMI():
                 try:
                     self.get(2.22)
                 except TypeError as error:
-                    print('get what is a float: ', error)
+                    print 'get what is a float: ', error
 
                 try:
                     self.set(2, 5)
                 except TypeError as error:
-                    print('set what is an integer: ', error)
+                    print 'set what is an integer: ', error
 
         hmi = ToyHMI(
             name=TestHMI.NAME,
@@ -520,12 +520,12 @@ class TestSCADAServer():
                 try:
                     self.get(2.22)
                 except TypeError as error:
-                    print('get what is a float: ', error)
+                    print 'get what is a float: ', error
 
                 try:
                     self.set(2, 5)
                 except TypeError as error:
-                    print('set what is an integer: ', error)
+                    print 'set what is an integer: ', error
 
         scadaserver = ToySCADAServer(
             name=TestSCADAServer.NAME,
@@ -590,12 +590,12 @@ class TestRTU():
                 try:
                     self.get(2.22)
                 except TypeError as error:
-                    print('get what is a float: ', error)
+                    print 'get what is a float: ', error
 
                 try:
                     self.set(2, 5)
                 except TypeError as error:
-                    print('set what is an integer: ', error)
+                    print 'set what is an integer: ', error
 
         scadaserver = ToyRTU(
             name=TestRTU.NAME,

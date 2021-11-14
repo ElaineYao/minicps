@@ -41,13 +41,13 @@ parser.add_argument(
     default='~/minicps')
 
 args = parser.parse_args()
-print("pox path is: %s" % args.pox)
-print("minicps path is: %s" % args.minicps)
+print "pox path is: %s" % args.pox
+print "minicps path is: %s" % args.minicps
 
-choice = input('please confirm: [Yn]')
+choice = raw_input('please confirm: [Yn]')
 
 if choice == 'n' or choice == 'no':
-    print("Abort init.py")
+    print "Abort init.py"
 
 else:
     # POX scripts

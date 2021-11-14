@@ -268,7 +268,7 @@ class AntiArpPoison(object):
         dst_ip = str(packet.payload.protodst)
         dst_mac = str(packet.payload.hwdst)
 
-        if (sender_mac not in list(self.ip_to_mac.values()) or
+        if (sender_mac not in self.ip_to_mac.values() or
                 sender_ip not in self.ip_to_mac):
 
             log.warning(
@@ -300,8 +300,8 @@ class AntiArpPoison(object):
             if sender_mac != self.ip_to_mac[sender_ip]:
 
                 # Internal attack
-                if sender_mac in list(self.ip_to_mac.values()):
-                    for key, value in list(self.ip_to_mac.items()):
+                if sender_mac in self.ip_to_mac.values():
+                    for key, value in self.ip_to_mac.items():
                         if value == sender_mac:
                             attacker_ip = key
                             break
@@ -353,8 +353,8 @@ class AntiArpPoison(object):
 
         log.info("%d: _handle_arpcache_restore" % self.connection.dpid)
 
-        ip_to_mac_list = list(self.ip_to_mac.items())
-        mac_to_port_list = list(self.mac_to_port.items())
+        ip_to_mac_list = self.ip_to_mac.items()
+        mac_to_port_list = self.mac_to_port.items()
         log.debug(mac_to_port_list)
 
         for sender_ip, sender_mac in ip_to_mac_list:

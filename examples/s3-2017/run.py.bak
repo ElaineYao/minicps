@@ -12,7 +12,7 @@ s317 run.py
 import io
 #from contextlib import redirect_stdout
 from io import TextIOWrapper, BytesIO
-from io import StringIO
+from cStringIO import StringIO
 from subprocess import call
 from time import sleep
 
@@ -37,7 +37,7 @@ import sys
 import os
 import random
 from multiprocessing import Process, Value
-import http.client, urllib.request, urllib.parse, urllib.error
+import httplib, urllib
 #import requests
 import subprocess
 import json
@@ -45,7 +45,7 @@ import time
 import datetime
 from threading import Thread
 #from bluetooth4LE import *
-import configparser
+import ConfigParser
 import struct
 from functools import wraps
 
@@ -163,7 +163,7 @@ def start():
     # NOTE: root-eth0 interface on the host
     root = Node('root', inNamespace=False)
     intf = net.addLink(root, s3).intf1
-    print(('DEBUG root intf: {}'.format(intf)))
+    print('DEBUG root intf: {}'.format(intf))
     root.setIP('10.0.0.30', intf=intf)
     # NOTE: all packet from root to the 10.0.0.0 network
     root.cmd('route add -net ' + '10.0.0.0' + ' dev ' + str(intf))
@@ -208,7 +208,7 @@ def stop():
 
     net.stop()
 
-    print("*** Running clean.sh")
+    print "*** Running clean.sh"
     call('./clean.sh')
 
     running = False

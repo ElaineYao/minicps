@@ -72,10 +72,10 @@ def test_MininetLinearTopo():
                   link=TCLink)
     net.start()
 
-    print("Dumpingg host connections")
+    print "Dumpingg host connections"
     dumpNodeConnections(net.hosts)
 
-    print("Testing network connectivity")
+    print "Testing network connectivity"
     net.pingAll()
 
     # CLI(net)
@@ -93,13 +93,13 @@ def test_MiniCPS():
             name='test_MiniCPS',
             net=net)
     except Exception as e:
-        print('TEST test_MiniCPS error: ', e)
+        print 'TEST test_MiniCPS error: ', e
 
 
 @SkipTest
 def test_MiniCPSTCLinkCPULimitedHost():
 
-    print()
+    print
     topo = SingleSwitchTopoTCLinkCPULimitedHost(n=4)
     net = Mininet(
         topo=topo,
@@ -113,7 +113,7 @@ def test_MiniCPSTCLinkCPULimitedHost():
 @SkipTest
 def test_MiniCPSCustomController():
 
-    print()
+    print
     topo = SingleSwitchTopo(n=4)
     net = Mininet(
         topo=topo,

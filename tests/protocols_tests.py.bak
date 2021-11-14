@@ -64,7 +64,7 @@ class TestEnipProtocol():
             EnipProtocol._stop_server(server)
 
         except Exception as error:
-            print('ERROR test_server_start_stop: ', error)
+            print 'ERROR test_server_start_stop: ', error
             assert False
 
     def test_init_client(self):
@@ -75,7 +75,7 @@ class TestEnipProtocol():
             eq_(client._name, 'enip')
             del client
         except Exception as error:
-            print('ERROR test_init_client: ', error)
+            print 'ERROR test_init_client: ', error
             assert False
 
     def test_init_server(self):
@@ -87,7 +87,7 @@ class TestEnipProtocol():
             server._stop_server(server._server_subprocess)
             del server
         except Exception as error:
-            print('ERROR test_init_server: ', error)
+            print 'ERROR test_init_server: ', error
             assert False
 
     def test_server_multikey(self):
@@ -98,7 +98,7 @@ class TestEnipProtocol():
             server = EnipProtocol._start_server(ADDRESS, TAGS)
             EnipProtocol._stop_server(server)
         except Exception as error:
-            print('ERROR test_server_multikey: ', error)
+            print 'ERROR test_server_multikey: ', error
             assert False
 
     def test_send_multikey(self):
@@ -126,7 +126,7 @@ class TestEnipProtocol():
 
         except Exception as error:
             EnipProtocol._stop_server(server)
-            print('ERROR test_send_multikey: ', error)
+            print 'ERROR test_send_multikey: ', error
             assert False
 
     def test_receive_multikey(self):
@@ -154,7 +154,7 @@ class TestEnipProtocol():
 
         except Exception as error:
             EnipProtocol._stop_server(server)
-            print('ERROR test_receive_multikey: ', error)
+            print 'ERROR test_receive_multikey: ', error
             assert False
 
     def test_client_server(self):
@@ -189,7 +189,7 @@ class TestEnipProtocol():
 
         except Exception as error:
             EnipProtocol._stop_server(enip._server_subprocess)
-            print('ERROR test_client_server: ', error)
+            print 'ERROR test_client_server: ', error
             assert False
 
     @SkipTest
@@ -248,7 +248,7 @@ class TestModbusProtocol():
             ModbusProtocol._stop_server(server)
 
         except Exception as error:
-            print('ERROR test_server_start_stop: ', error)
+            print 'ERROR test_server_start_stop: ', error
             assert False
 
 
@@ -261,7 +261,7 @@ class TestModbusProtocol():
             del client
 
         except Exception as error:
-            print('ERROR test_init_client: ', error)
+            print 'ERROR test_init_client: ', error
             assert False
 
 
@@ -275,7 +275,7 @@ class TestModbusProtocol():
             del server
 
         except Exception as error:
-            print('ERROR test_init_server: ', error)
+            print 'ERROR test_init_server: ', error
             assert False
 
 
@@ -310,7 +310,7 @@ class TestModbusProtocol():
 
         except Exception as error:
             ModbusProtocol._stop_server(server)
-            print('ERROR test_send: ', error)
+            print 'ERROR test_send: ', error
             assert False
 
     def test_receive(self):
@@ -354,7 +354,7 @@ class TestModbusProtocol():
 
         except Exception as error:
             ModbusProtocol._stop_server(server)
-            print('ERROR test_receive: ', error)
+            print 'ERROR test_receive: ', error
             assert False
 
     @SkipTest
@@ -405,7 +405,7 @@ class TestModbusProtocol():
 
         except Exception as error:
             ModbusProtocol._stop_server(modbus._server_subprocess)
-            print('ERROR test_client_server: ', error)
+            print 'ERROR test_client_server: ', error
             assert False
 
     def test_receive_count(self):
@@ -444,7 +444,7 @@ class TestModbusProtocol():
 
         except Exception as error:
             ModbusProtocol._stop_server(server)
-            print('ERROR test_receive_count: ', error)
+            print 'ERROR test_receive_count: ', error
             assert False
 
     def test_client_server_count(self):
@@ -477,6 +477,6 @@ class TestModbusProtocol():
 
         except Exception as error:
             ModbusProtocol._stop_server(server)
-            print('ERROR test_client_server_count: ', error)
+            print 'ERROR test_client_server_count: ', error
             assert False
 # }}}

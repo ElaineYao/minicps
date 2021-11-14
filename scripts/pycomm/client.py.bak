@@ -39,10 +39,10 @@ def enip_write(plc_ip, tag_name, value, tag_type):
 
     plc = ClxDriver()
     if plc.open(plc_ip):
-        print((plc.write_tag(tag_name, value, tag_type)))
+        print(plc.write_tag(tag_name, value, tag_type))
         plc.close()
     else:
-        print(("Unable to open", plc_ip))
+        print("Unable to open", plc_ip)
 
 
 def enip_read(plc_ip, tag_name):
@@ -52,10 +52,10 @@ def enip_read(plc_ip, tag_name):
 
     plc = ClxDriver()
     if plc.open(plc_ip):
-        print((plc.read_tag(tag_name)))
+        print(plc.read_tag(tag_name))
         plc.close()
     else:
-        print(("Unable to open", plc_ip))
+        print("Unable to open", plc_ip)
 
 
 def main():

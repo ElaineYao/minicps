@@ -38,7 +38,7 @@ if __name__ == '__main__':
     # NOTE: root-eth0 interface on the host
     root = Node('root', inNamespace=False)
     intf = net.addLink(root, s3).intf1
-    print(('DEBUG root intf: {}'.format(intf)))
+    print('DEBUG root intf: {}'.format(intf))
     root.setIP('10.0.0.30', intf=intf)
     # NOTE: all packet from root to the 10.0.0.0 network
     root.cmd('route add -net ' + '10.0.0.0' + ' dev ' + str(intf))
@@ -76,5 +76,5 @@ if __name__ == '__main__':
     net.stop()
 
 
-    print("*** Running clean.sh")
+    print "*** Running clean.sh"
     call('./clean.sh')

@@ -2,15 +2,15 @@
 
 # NOTE: https://pymodbus.readthedocs.io/en/latest/examples/asynchronous-server.html
 
-from pymodbus.server.async_io import StartTcpServer
-from pymodbus.server.async_io import StartUdpServer
-from pymodbus.server.async_io import StartSerialServer
+from pymodbus.server.async import StartTcpServer
+from pymodbus.server.async import StartUdpServer
+from pymodbus.server.async import StartSerialServer
 
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
-from pymodbus.server.async_io import StartTcpServer
+from pymodbus.server.async import StartTcpServer
 
 import argparse
 
@@ -20,26 +20,25 @@ if __name__ == "__main__":
 
     # NOTE: network
     parser.add_argument('-i', type=str, dest='ip', help='server ip')
-    # NOTE: allows non standard port to test without sudo
-    parser.add_argument('-p', type=int, dest='port',
+    parser.add_argument('-p', type=int, dest='port', choices=[502],
             default=502, help='port number')
     parser.add_argument('-m', type=int, dest='mode', choices=[1],
             default=1, help='mode')
     # NOTE: tags
     parser.add_argument('-d', type=int, dest='discrete_inputs',
-            choices=list(range(1, 1000)),
+            choices=range(1, 1000),
             default=10,
             help='number of discrete inputs')
     parser.add_argument('-c', type=int, dest='coils',
-            choices=list(range(1, 1000)),
+            choices=range(1, 1000),
             default=10,
             help='number of coils')
     parser.add_argument('-r', type=int, dest='input_registers',
-            choices=list(range(1, 1000)),
+            choices=range(1, 1000),
             default=10,
             help='number of input registers')
     parser.add_argument('-R', type=int, dest='holding_registers',
-            choices=list(range(1, 1000)),
+            choices=range(1, 1000),
             default=10,
             help='number of holding registers')
 

@@ -21,9 +21,9 @@ def test_build_nx_graph():
 
     assert len(graph) == 3, "graph nodes error"
 
-    print()
-    print('Graph vertices:', list(graph.nodes()))
-    print('Graph edges:', list(graph.edges()))
+    print
+    print 'Graph vertices:', list(graph.nodes())
+    print 'Graph edges:', list(graph.edges())
 
 
 def test_MininetTopoFromNxGraph():
@@ -35,7 +35,7 @@ def test_MininetTopoFromNxGraph():
 
     net = Mininet(topo=topo, link=TCLink, listenPort=6634)
     net.start()
-    print()
+    print
     net.pingAll()
 
     # CLI(net)

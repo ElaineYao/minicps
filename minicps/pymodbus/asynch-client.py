@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 
 from twisted.internet import reactor
-from pymodbus.client.async import ModbusClientFactory
+from pymodbus.client.async_io import ModbusClientFactory
 
 
 def process():

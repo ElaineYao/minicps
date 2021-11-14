@@ -241,7 +241,7 @@ def read_cpppo(ip, tag_name, cpppo_cache):
         line = file_ptr.readline()
 
         words = line.split()
-        print(words)
+        print words
         status = words[3][1:-1]
         if status != 'OK':
             value = '-1'
@@ -425,7 +425,7 @@ def init_db(db_path, datatypes):
                             cursor.execute(cmd, par_sub)
 
                     conn.commit()
-        except sqlite3.Error as e:
+        except sqlite3.Error, e:
             logger.warning('Error %s:' % e.args[0])
 
 
@@ -499,7 +499,7 @@ def read_statedb(PID=None, NAME=None, SCOPE='TODO'):
 
             records = cursor.fetchall()
             return records
-        except sqlite3.Error as e:
+        except sqlite3.Error, e:
             logger.warning('Error %s:' % e.args[0])
 
 
@@ -527,7 +527,7 @@ def read_single_statedb(PID, NAME, SCOPE='TODO'):
             record = cursor.fetchone()
             return record
 
-        except sqlite3.Error as e:
+        except sqlite3.Error, e:
             logger.warning('Error %s:' % e.args[0])
 
 
@@ -558,7 +558,7 @@ def update_statedb(VALUE, NAME, PID=None, SCOPE='TODO'):
             par_sub = tuple(par_temp)
             cursor.execute(cmd, par_sub)
             conn.commit()
-        except sqlite3.Error as e:
+        except sqlite3.Error, e:
             logger.warning('Error %s:' % e.args[0])
 
 
